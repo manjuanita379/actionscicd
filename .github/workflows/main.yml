@@ -1,3 +1,7 @@
+working-directory: /home/runner/work/actionscicd/actionscicd/config
+
+.github/workflows/your-workflow-file.yml
+
 name: CI/CD Pipeline
 
 on:
@@ -41,9 +45,10 @@ jobs:
       run: npm install -g serverless
 
     - name: List Files in Directory
-      run: ls -la
+      run: ls -la /home/runner/work/actionscicd/actionscicd/config
 
     - name: Deploy to AWS
+      working-directory: /home/runner/work/actionscicd/actionscicd/config
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
