@@ -1,7 +1,3 @@
-working-directory: /home/runner/work/actionscicd/actionscicd/config
-
-.github/workflows/your-workflow-file.yml
-
 name: CI/CD Pipeline
 
 on:
